@@ -1,0 +1,139 @@
+/* ========================================
+   FEATURED COURSES SECTION STYLES
+   ======================================== */
+
+.featured {
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    background-color: var(--bg-cream);
+    text-align: center;
+}
+
+.featured h2 {
+    font-size: var(--fs-h1);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+}
+
+.product-card {
+    text-align: center;
+    transition: transform var(--transition-normal);
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-image {
+    width: 300px;
+    height: 300px;
+    border-radius: var(--radius-circle);
+    background: url('../images/course-wheel.jpg') center/cover no-repeat;
+    margin: 0 auto var(--spacing-lg);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 30px var(--shadow-medium);
+    transition: all var(--transition-normal);
+}
+
+.product-card:nth-child(2) .product-image {
+    background-image: url('../images/course-handbuilding.jpg');
+}
+
+.product-card:nth-child(3) .product-image {
+    background-image: url('../images/course-glazing.jpg');
+}
+
+.product-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.2) 100%);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.product-card:hover .product-image::before {
+    opacity: 1;
+}
+
+.product-card:hover .product-image {
+    box-shadow: 0 12px 40px var(--shadow-medium);
+}
+
+.product-card h3 {
+    font-size: var(--fs-h3);
+    margin-bottom: var(--spacing-xs);
+}
+
+.product-price {
+    font-size: var(--fs-body-xl);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+.product-controls {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.qty-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--text-dark);
+    background: transparent;
+    border-radius: var(--radius-circle);
+    font-size: var(--fs-body-xl);
+    transition: all var(--transition-fast);
+}
+
+.qty-btn:hover {
+    background-color: var(--text-dark);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+.qty-input {
+    width: 60px;
+    text-align: center;
+    border: 1px solid var(--text-dark);
+    padding: var(--spacing-xs);
+    font-size: var(--fs-body);
+    border-radius: var(--radius-sm);
+}
+
+.add-to-cart {
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+    padding: var(--spacing-sm);
+    background-color: var(--button-dark);
+    color: var(--white);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-normal);
+    font-size: var(--fs-body-lg);
+}
+
+.add-to-cart:hover {
+    background-color: #2a2419;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--shadow-medium);
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}

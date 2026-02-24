@@ -1,0 +1,53 @@
+/* ========================================
+   CSS VARIABLES - DESIGN SYSTEM
+   ======================================== */
+
+:root {
+    /* Colors */
+    --bg-cream: #E8E1D5;
+    --text-dark: #3D3226;
+    --button-dark: #3D3226;
+    --button-light: #C4B5A0;
+    --white: #FFFFFF;
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+    --overlay-dark: rgba(0, 0, 0, 0.4);
+    
+    /* Typography */
+    --font-primary: 'Playfair Display', 'Georgia', serif;
+    --font-secondary: 'Georgia', serif;
+    
+    /* Font Sizes */
+    --fs-hero: 4rem;
+    --fs-h1: 3.5rem;
+    --fs-h2: 2.5rem;
+    --fs-h3: 1.8rem;
+    --fs-body: 1rem;
+    --fs-body-lg: 1.1rem;
+    --fs-body-xl: 1.2rem;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    --spacing-3xl: 6rem;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 15px;
+    --radius-lg: 20px;
+    --radius-full: 50px;
+    --radius-circle: 50%;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Max Widths */
+    --max-width-content: 1400px;
+    --max-width-text: 800px;
+}

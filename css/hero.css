@@ -1,0 +1,55 @@
+/* ========================================
+   HERO SECTION STYLES - WITH DUMMY IMAGE
+   ======================================== */
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+                url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1920&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fallback gradient if image doesn't load */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #4a423a 0%, #3D3226 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-content h1 {
+    font-size: var(--fs-hero);
+    color: var(--white);
+    margin-bottom: var(--spacing-lg);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    animation: slideInFromTop 1s ease-out;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 968px) {
+    .hero {
+        height: 80vh;
+        margin-top: 60px;
+    }
+
+    .hero-content h1 {
+        font-size: var(--fs-h2);
+        padding: 0 var(--spacing-md);
+    }
+}

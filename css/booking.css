@@ -1,0 +1,300 @@
+/* ========================================
+   BOOKING MODAL STYLES
+   ======================================== */
+
+.booking-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease;
+}
+
+.booking-modal[aria-hidden="false"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    z-index: 10001;
+    animation: slideUp 0.3s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-circle);
+    transition: all var(--transition-fast);
+    line-height: 1;
+}
+
+.modal-close:hover,
+.modal-close:focus-visible {
+    background-color: var(--bg-cream);
+    transform: rotate(90deg);
+    outline: 2px solid var(--text-dark);
+    outline-offset: 2px;
+}
+
+.modal-content h2 {
+    font-size: var(--fs-h2);
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-dark);
+    padding-right: var(--spacing-xl);
+}
+
+/* Form Styles */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.form-group label {
+    font-size: var(--fs-body);
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.required {
+    color: #d32f2f;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: var(--spacing-sm);
+    border: 2px solid var(--button-light);
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-body);
+    font-family: var(--font-secondary);
+    transition: all var(--transition-fast);
+    background-color: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--button-dark);
+    box-shadow: 0 0 0 3px rgba(61, 50, 38, 0.1);
+}
+
+.readonly-input {
+    background-color: var(--bg-cream) !important;
+    cursor: not-allowed;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    justify-content: flex-end;
+}
+
+.btn-cancel,
+.btn-submit,
+.btn-close-success {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    border-radius: var(--radius-full);
+    font-size: var(--fs-body-lg);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    border: none;
+}
+
+.btn-cancel {
+    background-color: var(--button-light);
+    color: var(--text-dark);
+}
+
+.btn-cancel:hover,
+.btn-cancel:focus-visible {
+    background-color: #b3a490;
+    transform: translateY(-2px);
+    outline: 2px solid var(--text-dark);
+    outline-offset: 2px;
+}
+
+.btn-submit {
+    background-color: var(--button-dark);
+    color: var(--white);
+}
+
+.btn-submit:hover,
+.btn-submit:focus-visible {
+    background-color: #2a2419;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--shadow-medium);
+    outline: 3px solid var(--white);
+    outline-offset: 2px;
+}
+
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Success Message */
+.booking-success {
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-circle);
+    background-color: #4caf50;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin: 0 auto var(--spacing-lg);
+    animation: scaleIn 0.5s ease;
+}
+
+.booking-success h3 {
+    font-size: var(--fs-h2);
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.booking-success p {
+    font-size: var(--fs-body-lg);
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.success-note {
+    font-size: var(--fs-body);
+    color: #666;
+    font-style: italic;
+    margin-top: var(--spacing-md);
+}
+
+.btn-close-success {
+    margin-top: var(--spacing-lg);
+    background-color: var(--button-dark);
+    color: var(--white);
+    width: 100%;
+}
+
+.btn-close-success:hover,
+.btn-close-success:focus-visible {
+    background-color: #2a2419;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--shadow-medium);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: var(--spacing-lg);
+        width: 95%;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn-cancel,
+    .btn-submit {
+        width: 100%;
+    }
+    
+    .modal-content h2 {
+        font-size: var(--fs-h3);
+    }
+}

@@ -1,0 +1,87 @@
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet Styles */
+@media (max-width: 968px) {
+    :root {
+        --fs-hero: 3rem;
+        --fs-h1: 2.5rem;
+        --fs-h2: 2rem;
+        --fs-h3: 1.5rem;
+        --spacing-3xl: 4rem;
+    }
+
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    header {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    :root {
+        --fs-hero: 2rem;
+        --fs-h1: 2rem;
+        --fs-h2: 1.5rem;
+        --fs-h3: 1.3rem;
+        --spacing-3xl: 3rem;
+    }
+
+    .section {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    /* Grid adjustments */
+    .service-grid,
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    /* Image adjustments */
+    .service-image,
+    .product-image,
+    .about-image,
+    .subscribe-image {
+        height: 300px;
+    }
+
+    .product-image {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    :root {
+        --fs-hero: 1.8rem;
+        --fs-h1: 1.8rem;
+        --spacing-xl: 2rem;
+        --spacing-3xl: 2.5rem;
+    }
+
+    .hero {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .cta-btn,
+    .learn-more-btn,
+    .signup-btn {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: var(--fs-body);
+    }
+}
+
+/* Landscape Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: var(--spacing-3xl) var(--spacing-md);
+    }
+}
